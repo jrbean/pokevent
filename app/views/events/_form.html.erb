@@ -25,14 +25,14 @@
   </div>
   <div class="field">
     <%= f.label :start %><br>
-    <%= f.datetime_select :start %>
+    <%= f.datetime_select :start, ampm: true %>
   </div>
   <div class="field">
     <%= f.label :end %><br>
-    <%= f.datetime_select :end %>
+    <%= f.datetime_select :end, ampm: true %>
   </div>
   <div class="field">
-    <%= f.label :cost_in_cents %><br>
+    <%= f.label :cost %><br>
     <%= f.number_field :cost_in_cents %>
   </div>
   <div class="actions">
