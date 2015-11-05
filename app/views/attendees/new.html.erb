@@ -1,4 +1,6 @@
-<h2>Register for <%= Event.find_by_id(params[:id]) %>?</h2><br/>
+<h2>Register for <%= Event.find(params[:event_id]).name %>?</h2><br/>
+<h3>The cost is $<%= Event.find(params[:event_id]).price_in_dollars %>.
+
 <%= form_tag event_attendees_path do %>
 <%= submit_tag "I'm going!", class: "btn btn-primary" %>
 <% end %>

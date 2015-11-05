@@ -1,0 +1,22 @@
+<h1>My Events</h1>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Start</th>
+      <th>End</th>
+      <th colspan="6"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @attendance.each do |event| %>
+      <tr>
+        <td><%= event.name %></td>
+        <td><%= event.description %></td>
+        <td><%= event.start %></td>
+        <td><%= event.end %></td>
+        <td><%= link_to 'Show', event %></td>
+    <% end %>
