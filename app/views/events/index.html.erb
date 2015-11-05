@@ -29,6 +29,8 @@
           <% if current_user.id == event.organizer.user_id %>
             <td><%= link_to 'Edit', edit_event_path(event) %></td>
             <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% elsif current_user.attended_event_ids.include? event.id %>
+            <td> Not Going Link </td>
           <% else %>
             <td><%= link_to 'Register', new_event_attendee_path(event) %></td>
           <% end %>
