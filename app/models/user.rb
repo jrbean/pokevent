@@ -12,8 +12,8 @@ class User < ActiveRecord::Base
 
   validate :validate_username
 
-  has_many :attended_events, through: :attendees, source: :events
-  has_many :organized_events, through: :organizers, source: :events
+  has_many :attended_events, :through => :attendees, :source => :event
+  has_many :organized_events, :through => :organizers, :source => :event
   has_many :organizers
   has_many :attendees
 

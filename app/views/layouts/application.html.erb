@@ -48,8 +48,16 @@
         <a class="navbar-brand" href="/">Pokévent</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
+            <li><%= link_to "My Events", "/path1"  %></li>
           </ul>
+          <ul class ="nav navbar-nav pull-right">
+            <% if current_user %>
+              <li><%= link_to current_user.username.capitalize, root_path %></li>
+              <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+              <li><%= link_to "Sign in", new_user_session_path %></li>
+            <% end %>
+        </ul>
         </div>
       </div>
     </div>
@@ -74,7 +82,7 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; Company 2015</p>
+        <p>&copy; Pokiemans 2015</p>
       </footer>
 
     </div> <!-- /container -->

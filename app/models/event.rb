@@ -1,5 +1,5 @@
 class Event < ActiveRecord::Base
-  has_many :organizers
+  has_one :organizer
   has_many :attendees
 
 

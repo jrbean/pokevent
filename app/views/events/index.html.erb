@@ -2,7 +2,7 @@
 
 <h1>Listing Events</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Name</th>
@@ -25,8 +25,16 @@
         <td><%= event.end %></td>
         <td><%= event.cost_in_cents %></td>
         <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if current_user %>
+          <% if current_user.id == event.organizer.user_id %>
+            <td><%= link_to 'Edit', edit_event_path(event) %></td>
+            <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% else %>
+            <td><%= link_to 'Register', new_event_attendee_path(event) %></td>
+          <% end %>
+        <% else %>
+          <td><%= link_to 'Sign Up!', new_user_registration_path %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

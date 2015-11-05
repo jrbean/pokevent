@@ -1,0 +1,4 @@
+<h2>Register for <%= Event.find_by_id(params[:id]) %>?</h2><br/>
+<%= form_tag event_attendees_path do %>
+<%= submit_tag "I'm going!", class: "btn btn-primary" %>
+<% end %>
