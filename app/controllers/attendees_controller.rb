@@ -13,6 +13,12 @@ class AttendeesController < ApplicationController
     @attendee = Attendee.new
   end
 
+  def destroy
+    @attendee = Attendee.find_by(attendee_params)
+    @attendee.delete
+    redirect_to :back
+  end
+
   private
 
   def attendee_params

@@ -7,7 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Attendance</th>
+      <th>Attendance Cap</th>
       <th>Start</th>
       <th>End</th>
       <th>Admission</th>
@@ -30,7 +30,7 @@
             <td><%= link_to 'Edit', edit_event_path(event) %></td>
             <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% elsif current_user.attended_event_ids.include? event.id %>
-            <td> Not Going Link </td>
+            <td> <%= link_to 'Not attending?', event_attendee_path(event, current_user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% else %>
             <td><%= link_to 'Register', new_event_attendee_path(event) %></td>
           <% end %>
