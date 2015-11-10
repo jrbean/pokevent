@@ -23,6 +23,8 @@ group :development do
   gem 'spring'
 end
 
+gem 'stripe'
+gem 'figaro'
 gem 'devise'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap_form'
