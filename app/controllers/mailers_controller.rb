@@ -8,6 +8,7 @@ class MailersController < ApplicationController
       body = params[:mail_body]
       OrganizerMailer.contact(current_user, @recipient_email, body).deliver
     end
+    redirect_to :back
   end
 
   def attendee_mail
@@ -15,6 +16,7 @@ class MailersController < ApplicationController
     @recipient_email = @event.organizer.user.email
     body = params[:mail_body]
     OrganizerMailer.contact(current_user, @recipient_email, body).deliver
+    redirect_to :back
   end
 
 

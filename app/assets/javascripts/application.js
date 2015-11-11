@@ -15,3 +15,21 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
+
+function addOneButtonToggle(button) {
+  var contactButton = document.querySelector(".contact-button")
+
+  contactButton.onclick = function() {
+    var div = document.getElementById('contact-form');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    } else {
+        div.style.display = 'block';
+    }
+  };
+}
+
+
+window.onload = function() {
+
+}

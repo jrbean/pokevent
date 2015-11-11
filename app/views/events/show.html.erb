@@ -26,8 +26,8 @@
 </p>
 
 <p>
-  <strong>Cost in cents:</strong>
-  <%= @event.cost_in_cents %>
+  <strong>Price:</strong>
+  <%= number_to_currency(@event.price_in_dollars) %>
 </p>
 
 <% if current_user.id == @event.organizer.user_id %>
@@ -35,29 +35,19 @@
   <%= link_to 'Delete', event_path(@event), method: :delete, data: { confirm: 'Are you sure?' } %>
   <button class="contact-button">Contact Attendees</button>
   <div id="contact-form" style="display: none">
-    <form class="contact-form" action="attendee_mail" method="post">
+    <form class="contact-form" action="/events/<%= @event.id %>/attendee_mail" method="post">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
       <label>Message Body</label><br/>
       <textarea name="mail_body" cols="40" rows="6" ></textarea><br/>
       <input type="submit" value="Send"><br/>
     </form>
   </div>
+<% elsif current_user.attended_event_ids.include? @event.id %>
+  <%= link_to 'Not attending?', event_attendee_path(@event, current_user), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% elsif @event.attendees.count < @event.attendance %>
+  <%= link_to 'Register', new_event_attendee_path(@event) %>
 <% else %>
-  <%= link_to 'Not attending?', event_attendee_path(event, current_user), method: :delete, data: { confirm: 'Are you sure?' } %>
+  Full! Join Waitlist?
 <% end %>
 <br/>
   <%= link_to 'Back', events_path %>
-
-<script type="text/javascript">
-  var contactButton = document.querySelector(".contact-button")
-
-  contactButton.onclick = function() {
-    var div = document.getElementById('contact-form');
-    if (div.style.display !== 'none') {
-        div.style.display = 'none';
-    }
-    else {
-        div.style.display = 'block';
-    }
-};
-
-</script>

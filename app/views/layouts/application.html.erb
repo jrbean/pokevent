@@ -32,7 +32,7 @@
 
     <!-- For all other devices -->
     <!-- Size should be 32 x 32 pixels -->
-    <%= favicon_link_tag 'favicon.ico' %>
+    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
 
     <%= javascript_include_tag "application" %>
   </head>
@@ -45,6 +45,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+          <%= image_tag 'grey_ball.png', class: "nav navbar-nav pull-left" %>
           <a class="navbar-brand" href="/">Pokévent</a>
           <div class="navbar-collapse collapse navbar-responsive-collapse">
             <ul class="nav navbar-nav">
