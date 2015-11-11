@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   get 'user/events' => 'attendances#show'
 
+  post 'events/:id/attendee_mail' => 'mailers#attendee_mail'
+  post 'events/:id/organizer_mail' => 'mailers#organizer_mail'
+
   root 'events#index'
 
 end

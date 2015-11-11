@@ -33,6 +33,7 @@
             <td> <%= link_to 'Not attending?', event_attendee_path(event, current_user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
           <% else %>
             <td><%= link_to 'Register', new_event_attendee_path(event) %></td>
+            <td>Contact Organizer</td>
           <% end %>
         <% else %>
           <td><%= link_to 'Sign Up!', new_user_registration_path %></td>
@@ -43,6 +44,17 @@
 </table>
 
 <br>
-<% if current_user.admin %>
-  <%= link_to 'New Event', new_event_path %>
+<% if current_user %>
+  <% if current_user.admin %>
+    <button class="new-event">New Event</button>
+
+    <% end %>
 <% end %>
+
+<script type="text/javascript">
+  var eventButton = document.querySelector(".new-event")
+
+  eventButton.addEventListener("click", function() {
+    alert("Button was clicked");
+  })
+</script>
