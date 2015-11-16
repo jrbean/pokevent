@@ -16,10 +16,11 @@
 //= require turbolinks
 //= require_tree .
 
-function addOneButtonToggle(button) {
+function addOneButtonToggle() {
   var contactButton = document.querySelector(".contact-button")
 
   contactButton.onclick = function() {
+    console.log("onclick")
     var div = document.getElementById('contact-form');
     if (div.style.display !== 'none') {
         div.style.display = 'none';
@@ -31,5 +32,5 @@ function addOneButtonToggle(button) {
 
 
 window.onload = function() {
-
+  addOneButtonToggle();
 }
