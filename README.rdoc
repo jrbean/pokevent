@@ -1,28 +1,19 @@
-== README
+== Pokévent!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Pokévent is a relatively simple event organization app I use to work on Rails
+basics. It's Pokémon themed to make a simple app much more entertaining to work
+on.
 
-Things you may want to cover:
+== Things I'm working on:
 
-* Ruby version
+* More interesting views.
 
-* System dependencies
+* Stripe integration (Lavender Town isn't a cheap place)
 
-* Configuration
+== In the further future:
 
-* Database creation
+* An API to more easily swap in a non-Poké front-end.
 
-* Database initialization
+* Improved authorization scopes for event organizers and attendees
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Tests!
