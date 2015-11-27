@@ -1,0 +1,131 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1em;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    right:0;
+    left:0;
+    bottom:0;
+}
+
+body * {
+    margin:0;
+    padding: 0;
+    box-sizing: inherit;
+}
+/*base panel styles*/
+.pe-panel {
+    border-radius: 6px;
+    font-family: "Arial", "Helvetica", sans-serif;
+    font-size: 1.3rem;
+    border: 1px solid grey;
+    overflow: hidden;
+    position: relative;
+    margin: 1em;
+}
+
+.pe-panel-header {
+    font-size: 2.4rem;
+    padding: 0.5rem 1rem;
+}
+
+.pe-panel-content {
+    position: relative;
+}
+
+/*event style*/
+.pe-event {
+    border: 1px solid red;
+}
+
+.pe-panel-block {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+}
+
+.pe-event-name {
+    color: #ffffff;
+    background-color: red;
+}
+
+.pe-event-description {
+    position: relative;
+}
+
+.pe-event-description:before {
+    content: '';
+    display: block;
+    position: relative;
+    float: right;
+    width: 40%;
+    padding-bottom: 40%;
+    border: 1px solid red;
+    margin-left: 1rem;
+}
+
+/*Attendance sub panel*/
+.pe-event-attendance {
+    border-color: blue;
+}
+.pe-event-attendance .pe-panel-header {
+    background-color: blue;
+}
+.pe-event-attendance .pe-panel-content {
+    font-size: 1.8rem;
+}
+
+/*Date Range Panel*/
+.pe-event-date-range {
+    border-color: yellow;
+}
+.pe-event-date-range .pe-panel-header{
+    background-color: yellow;
+}
+
+.pe-event-date-range .pe-panel-content {
+    font-size: 1.8rem;
+}
+
+.pe-event-date {
+    font-size: 1.8rem;
+}
+
+.pe-event-date-start {
+    
+}
+
+.pe-event-date-end {
+    
+}
+
+.pe-event-date-range,
+.pe-event-attendance {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/*Event Price*/
+.pe-event-price {
+    font-size: 3rem;
+    color: red;
+    text-align: right;
+}
+
+/*Event Link*/
+.pe-event-link {
+    font-size: 1.8rem;
+    text-align: right;
+}
+
+@media all and (max-width: 460px) {
+    .pe-event-description:before {
+        display: none;
+    }
+    .pe-panel {
+        display: block !important;
+    }
+}
